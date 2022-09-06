@@ -11,3 +11,15 @@ body {
     width: 100%;
     position: absolute;
 }
+
+* {
+    text-align: center;
+}
+
+h1 {
+    margin: 24px 0;
+}
+
+app-header {
+    margin: 0 24px;
+}
