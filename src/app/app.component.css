@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Ruda:400,900');
+
+::ng-deep * {
+    font-family: 'Ruda', sans-serif;
+    color: white;
+}
+
+body {
+    background-color: #21295C;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
