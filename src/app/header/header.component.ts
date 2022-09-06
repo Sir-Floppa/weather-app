@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiConnectionService } from '../api-connection.service';
-import { IForecast } from '../forecastInterface';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,19 +6,11 @@ import { IForecast } from '../forecastInterface';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  forecast: IForecast;
+  @Input() city: string;
+  @Input() date: Date; 
 
-  city: string;
-  date: Date = new Date(); 
+  constructor() { }
 
-  constructor(private apiService: ApiConnectionService) { }
-
-  ngOnInit(): void {
-    this.apiService.getData()
-      .subscribe(res => {
-        this.forecast = res;
-        this.city = this.forecast.city_name;
-      });
-  }
+  ngOnInit(): void { }
 
 }

@@ -1,17 +1,17 @@
-import { asNativeElements, Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { IForecast } from './forecastInterface';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ApiConnectionService implements OnInit {
+export class ApiConnectionService {
   private apiUrl: string = 'https://weatherbit-v1-mashape.p.rapidapi.com/forecast/3hourly';
   private apiKey: string = '749b37114amshf7430399b5fb346p1b59e2jsn451653c0fe81';
   private apiHost: string = 'weatherbit-v1-mashape.p.rapidapi.com';
 
-  lat: number;
-  lon: number;
+  lat: number = this.getLat();
+  lon: number = this.getLon();
 
   options: object = {
     headers: {
@@ -20,15 +20,10 @@ export class ApiConnectionService implements OnInit {
     },
     params: {
       'lang': 'en',
-      'lat': this.getLat(),
-      'lon': this.getLon()
+      'lat': this.lat,
+      'lon': this.lon
     },
     responseType: 'json'
-  }
-
-  ngOnInit(): void {
-    this.lat = this.getLat();
-    this.lon = this.getLon();
   }
 
   getData() {

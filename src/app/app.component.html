@@ -1,4 +1,14 @@
 <body>
-  <app-header></app-header>
-  <app-forecast></app-forecast>
+  <app-header
+    [city]="city"
+    [date]="date">
+  </app-header>
+
+  <app-forecast
+    [desc]="desc"
+    [iconUrl]="icon"
+    [temp]="temp"
+    [wind]="wind"
+    [humidity]="humidity">
+  </app-forecast>
 </body>
