@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiConnectionService } from './api-connection.service';
+import { IForecastData } from './forecastDataInterface';
 import { IForecast } from './forecastInterface';
 
 @Component({
@@ -27,6 +28,9 @@ export class AppComponent implements OnInit {
   wind: number;
   humidity: number;
 
+  // Today Forecast Info
+  forecastData: IForecastData[];
+
   ngOnInit(): void {
 
     navigator.geolocation.getCurrentPosition( res => {
@@ -46,6 +50,8 @@ export class AppComponent implements OnInit {
           this.temp = this.forecast.data[0].temp;
           this.wind = this.forecast.data[0].wind_spd;
           this.humidity = this.forecast.data[0].rh;
+          // Today Forecast Info
+          this.forecastData = this.forecast.data;
         })
     })
 

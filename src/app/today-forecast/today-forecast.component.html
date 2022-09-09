@@ -1,0 +1,16 @@
+<h2>Today</h2>
+
+<ul>
+    <li *ngFor="let data of forecastData">
+        <img [src]="getIcon(data.weather.icon)">
+        <div class="data">
+            <div class="hour">
+                {{ data.timestamp_local | date:'shortTime'}}
+            </div>
+
+            <div class="temperature">
+                {{ data.temp }} <sup>°C</sup>
+            </div>
+        </div>
+    </li>
+</ul>
