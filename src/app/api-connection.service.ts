@@ -19,7 +19,8 @@ export class ApiConnectionService {
       params: {
         'lang': 'en',
         'lat': lat,
-        'lon': lon
+        'lon': lon,
+        'days': 2
       },
       responseType: 'json'
     }

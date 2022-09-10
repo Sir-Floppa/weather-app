@@ -7,6 +7,7 @@ import { IForecastData } from '../forecastDataInterface';
   styleUrls: ['./today-forecast.component.css']
 })
 export class TodayForecastComponent implements OnInit {
+  @Input() index: number;
 
   @Input() forecastData: IForecastData[];
 

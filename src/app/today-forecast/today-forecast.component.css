@@ -9,6 +9,7 @@ ul {
     display: flex;
     list-style: none;
     overflow-x: scroll;
+    padding-bottom: 12px;
 }
 
 li {
@@ -20,9 +21,19 @@ li {
 
 img {
     scale: 50%;
+    margin: -24px;
 }
 
 .data {
     width: 70px;
     margin-right: 12px;
+    margin-top: 12px;
+}
+
+.current-data {
+    background-color: #247BA0;
+}
+
+.temperature {
+    font-size: 20px;
 }
