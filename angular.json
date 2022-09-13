@@ -1,12 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "b4b2ae66-8929-4906-8a34-da71c7389f2c"
+    "analytics": "28592b20-0e2c-498c-a764-1edbdd42460f"
   },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "tiempoApp": {
+    "weatherApp": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/tiempo-app",
+            "outputPath": "dist/weather-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -71,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "tiempoApp:build:production"
+              "browserTarget": "weatherApp:build:production"
             },
             "development": {
-              "browserTarget": "tiempoApp:build:development"
+              "browserTarget": "weatherApp:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "tiempoApp:build"
+            "browserTarget": "weatherApp:build"
           }
         },
         "test": {
@@ -105,5 +105,5 @@
       }
     }
   },
-  "defaultProject": "tiempoApp"
+  "defaultProject": "weatherApp"
 }
