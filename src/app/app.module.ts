@@ -8,6 +8,9 @@ import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ForecastComponent } from './forecast/forecast.component';
 import { TodayForecastComponent } from './today-forecast/today-forecast.component';
+import { IonicModule } from '@ionic/angular';
+
+import { Geolocation } from '@awesome-cordova-plugins/geolocation/ngx';
 
 @NgModule({
   declarations: [
@@ -19,9 +22,10 @@ import { TodayForecastComponent } from './today-forecast/today-forecast.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    IonicModule.forRoot()
   ],
-  providers: [],
+  providers: [Geolocation],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

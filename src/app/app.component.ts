@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiConnectionService } from './api-connection.service';
 import { IForecastData } from './forecastDataInterface';
 import { IForecast } from './forecastInterface';
+import { Geolocation } from '@awesome-cordova-plugins/geolocation/ngx';
 
 @Component({
   selector: 'app-root',
@@ -9,33 +10,33 @@ import { IForecast } from './forecastInterface';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  forecast: IForecast;
+  forecast?: IForecast;
   currentDate: Date = new Date();
-  index: number;
+  index?: number;
 
   // Location Info
-  lat: number;
-  lon: number;
+  lat?: number;
+  lon?: number;
 
   // Header Info
-  city: string;
-  date: string;
+  city?: string;
+  date?: string;
 
   // Forecast Info
-  desc: string;
+  desc?: string;
 
-  icon: string;
+  icon?: string;
 
-  temp: number;
-  wind: number;
-  humidity: number;
+  temp?: number;
+  wind?: number;
+  humidity?: number;
 
   // Today Forecast Info
-  forecastData: IForecastData[];
+  forecastData?: IForecastData[];
 
   ngOnInit(): void {
 
-    navigator.geolocation.getCurrentPosition( res => {
+    this.geolocation.getCurrentPosition().then( res => {
       this.lat = res.coords.latitude;
       this.lon = res.coords.longitude;
       
@@ -63,7 +64,7 @@ export class AppComponent implements OnInit {
 
   }
   
-  constructor(private apiService: ApiConnectionService) { }
+  constructor(private apiService: ApiConnectionService, private geolocation: Geolocation) { }
 
   getCurrentDataIndex(dataArray: IForecastData[]): number {
     let tempIndex: number = 0;

@@ -7,9 +7,9 @@ import { IForecastData } from '../forecastDataInterface';
   styleUrls: ['./today-forecast.component.css']
 })
 export class TodayForecastComponent implements OnInit {
-  @Input() index: number;
+  @Input() index?: number;
 
-  @Input() forecastData: IForecastData[];
+  @Input() forecastData?: IForecastData[];
 
   getIcon(code: string): string {
     return `https://www.weatherbit.io/static/img/icons/${code}.png`

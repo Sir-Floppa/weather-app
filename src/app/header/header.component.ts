@@ -6,8 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Input() city: string;
-  @Input() date: string; 
+  @Input() city?: string;
+  @Input() date?: string; 
 
   constructor() { }
 

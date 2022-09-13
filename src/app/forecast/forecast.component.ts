@@ -6,13 +6,13 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./forecast.component.css']
 })
 export class ForecastComponent implements OnInit {
-  @Input() desc: string;
+  @Input() desc?: string;
 
-  @Input() iconUrl: string;
+  @Input() iconUrl?: string;
 
-  @Input() temp: number;
-  @Input() wind: number;
-  @Input() humidity: number;
+  @Input() temp?: number;
+  @Input() wind?: number;
+  @Input() humidity?: number;
 
   constructor() { }
 
