@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ForecastComponent } from './forecast/forecast.component';
 import { TodayForecastComponent } from './today-forecast/today-forecast.component';
+import { NavigationMenuComponent } from './navigation-menu/navigation-menu.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
@@ -16,7 +17,8 @@ import { environment } from '../environments/environment';
     AppComponent,
     HeaderComponent,
     ForecastComponent,
-    TodayForecastComponent
+    TodayForecastComponent,
+    NavigationMenuComponent
   ],
   imports: [
     BrowserModule,

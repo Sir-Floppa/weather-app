@@ -20,6 +20,13 @@ h1 {
     margin: 24px 0;
 }
 
-app-header {
-    margin: 0 24px;
+:host app-header {
+    margin: 0 48px;
+}
+
+:host app-navigation-menu {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
 }
